@@ -53,7 +53,7 @@ Clean and responsive user interface.
 AI-generated explanations of the diagnosis.  
 Alternative inference architecture compared to local ML.
 
-🗂️ Model File
+🗂️ Model File  
 
 The trained model file is not included in this repository due to GitHub file size limits.
 

@@ -53,7 +53,7 @@ Interfaz de usuario limpia y responsiva.
 Explicaciones del diagnóstico generadas por IA.  
 Arquitectura de inferencia alternativa frente al modelo local.
 
-🗂️ Archivo del Modelo
+🗂️ Archivo del Modelo 
 
 El archivo del modelo entrenado no se incluye en este repositorio por límites de tamaño de GitHub.
 
