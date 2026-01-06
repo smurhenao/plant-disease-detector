@@ -53,6 +53,18 @@ Interfaz de usuario limpia y responsiva.
 Explicaciones del diagnóstico generadas por IA.  
 Arquitectura de inferencia alternativa frente al modelo local.
 
+🗂️ Archivo del Modelo
+
+El archivo del modelo entrenado no se incluye en este repositorio por límites de tamaño de GitHub.
+
+Puedes descargar el modelo aquí:  
+https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link
+
+Después de descargarlo, ubícalo en:
+
+local-ml-version/model_plantvillage.h5
+
+
 📂 Carpeta:
 
 /gemini-ai-version

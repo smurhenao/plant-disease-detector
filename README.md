@@ -53,6 +53,18 @@ Clean and responsive user interface.
 AI-generated explanations of the diagnosis.  
 Alternative inference architecture compared to local ML.
 
+🗂️ Model File
+
+The trained model file is not included in this repository due to GitHub file size limits.
+
+You can download the trained model here:  
+https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link
+
+After downloading, place the file:
+
+local-ml-version/model_plantvillage.h5
+
+
 📂 Folder:
 
 /gemini-ai-version
