@@ -1,3 +1,4 @@
+*.h5
 gemini-ai-version/.env
 .env
-.h5
+
