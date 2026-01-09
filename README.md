@@ -1,111 +1,88 @@
 🇺🇸 English | [🇪🇸 Español](README_ES.md)
+# 🌱 Plant Disease Detector — AI & Full Stack Platform
 
-🌱 Plant Disease Detector — AI & Full Stack Platform
+### 📌 Overview
+This project is a comprehensive web platform for the automatic detection of plant diseases using computer vision and artificial intelligence. It was designed and implemented as a complete engineering solution, from model training to deployment and user interface.
 
-📌 Overview
+The system offers **two independent AI implementations** to solve the same problem, demonstrating adaptability and solid software architecture skills.
 
-This project is a complete web platform for automatic plant disease detection using computer vision and artificial intelligence.  
-It was designed and implemented as a full engineering solution, from model training to deployment and user interface.
+---
 
-The system provides two independent AI implementations to solve the same problem:
+### 🎥 Demo in Action
 
-Local machine learning model trained from scratch
+[![Watch Plant Detector Demo](https://img.youtube.com/vi/C8H5XjXPsZc/0.jpg)](https://youtu.be/C8H5XjXPsZc)
 
-Cloud-based AI diagnosis using the Google Gemini API
+*Click the image above to watch the full demonstration: Image upload, AI processing, and real-time diagnosis.*
 
-This approach demonstrates strong software architecture skills and adaptability to modern AI systems.
+---
 
-🧠 Version 1 — Local Machine Learning Model  
-Technologies
+### 📸 Screenshots
 
-Python  
-TensorFlow / Keras  
-NumPy  
-PIL  
-Streamlit  
+| Local Model Interface | Cloud AI (Gemini) Analysis |
+| :---: | :---: |
+| ![Local](./screenshots/local_ui.png) | ![Cloud](./screenshots/cloud_ui.png) |
 
-Features
+---
 
-Trained a Convolutional Neural Network (CNN) for plant disease classification.  
-Image preprocessing and normalization.  
-Model training with epochs and performance evaluation.  
-Interactive web interface built with Streamlit.  
-Displays diagnosis and confidence level.  
-Modular and scalable architecture.
+### 🧠 Version 1 — Local Machine Learning Model
+**Folder:** `/local-ml-version`
 
-📂 Folder:
+* **Tech Stack:** Python, TensorFlow / Keras, NumPy, PIL, Streamlit.
+* **Features:**
+  - Convolutional Neural Network (CNN) training for plant disease classification.
+  - Image preprocessing and normalization.
+  - Training epochs and performance evaluation.
+  - Diagnostic visualization and confidence levels.
 
-/local-ml-version
+⚠️ **Model File:** The trained model file is not included in this repo due to GitHub size limits.
+- **Download the model here:** [Google Drive Link](https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link)
+- **Placement:** After downloading, place it in: `local-ml-version/model_plantvillage.h5`.
 
-☁️ Version 2 — Cloud AI with Gemini  
-Technologies
+---
 
-Python  
-Streamlit  
-Google Gemini API  
-dotenv  
+### ☁️ Version 2 — Cloud AI with Gemini
+**Folder:** `/gemini-ai-version`
 
-Features
+* **Tech Stack:** Python, Streamlit, Google Gemini API, dotenv.
+* **Features:**
+  - Gemini 2.5 Flash integration for advanced image analysis.
+  - Secure environment variable management for API credentials.
+  - AI-generated diagnostic explanations.
+  - Alternative inference architecture compared to the local model.
 
-Integrated Gemini 2.0 Flash for advanced image analysis.  
-Secure environment variable handling for API credentials.  
-Clean and responsive user interface.  
-AI-generated explanations of the diagnosis.  
-Alternative inference architecture compared to local ML.
+---
 
-🗂️ Model File  
+### 🧩 Demonstrated Skills
+* Deep Learning & Computer Vision.
+* Full Stack Development & AI API Integration.
+* Software Architecture & Data Processing.
+* Secure Application Design & AgriTech Solutions.
 
-The trained model file is not included in this repository due to GitHub file size limits.
+---
 
-You can download the trained model here:  
-https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link
+### 🚀 How to Run
 
-After downloading, place the file:
+1. **Clone repository:**
+   ```bash
+   git clone [https://github.com/smurhenao/plant-disease-detector.git](https://github.com/smurhenao/plant-disease-detector.git)
+   cd plant-disease-detector
+Run Local Version:
 
-local-ml-version/model_plantvillage.h5
+Bash
 
+cd local-ml-version
+pip install -r requirements.txt
+streamlit run app.py
+Run Gemini Version:
 
-📂 Folder:
+Bash
 
-/gemini-ai-version
-
-🧩 Skills Demonstrated
-
-Deep Learning  
-Computer Vision  
-Full Stack Development  
-AI API Integration  
-Software Architecture  
-Data Processing  
-Secure Application Design  
-
-🚀 How to Run
-
-Clone repository  
-git clone https://github.com/smurhenao/plant-disease-detector.git  
-cd plant-disease-detector  
-
-Run local ML version  
-cd local-ml-version  
-pip install -r requirements.txt  
-streamlit run app.py  
-
-Run Gemini version  
-cd gemini-ai-version  
-pip install -r requirements.txt  
-streamlit run app.py  
-
-Create a .env file based on .env.example and add your Gemini API key.
-
+cd gemini-ai-version
+pip install -r requirements.txt
+# Create a .env file from .env.example and add your Gemini API Key
+streamlit run app.py
 🌍 Applications
-
-Precision agriculture  
-Crop disease diagnosis  
-Academic research  
-AgriTech solutions  
+Precision agriculture, crop disease diagnosis, academic research, and AgriTech solutions.
 
 🧑‍💻 Author
-
-Sebastian Murillo  
-Software Engineer | Full Stack Developer | AI & Data
-
+Sebastian Murillo - Software Engineer | Full Stack Developer | AI & Data

@@ -6,7 +6,7 @@ import json
 
 st.set_page_config(page_title="Clasificador de Enfermedades en Hojas 🌿", layout="centered")
 
-st.title("🌿 Clasificador de Enfermedades en Hojas con IA 🤖")
+st.title("🌿 Clasificador de Enfermedades en Hojas con IA local 🤖")
 st.write("Sube una imagen de una hoja y el modelo detectará la enfermedad.")
 
 # Cargar el modelo
