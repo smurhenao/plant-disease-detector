@@ -38,7 +38,22 @@ The system offers **two independent AI implementations** to solve the same probl
 - **Download the model here:** [Google Drive Link](https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link)
 - **Placement:** After downloading, place it in: `local-ml-version/model_plantvillage.h5`.
 
+<<<<<<< HEAD
 ---
+=======
+🗂️ Model File  
+
+The trained model file is not included in this repository due to GitHub file size limits.
+
+You can download the trained model here:  
+https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link
+
+After downloading, place the file:
+local-ml-version/model_plantvillage.h5
+
+☁️ Version 2 — Cloud AI with Gemini  
+Technologies
+>>>>>>> b5a58dac1e7dd032579a6b07b7f22982b81c3bbd
 
 ### ☁️ Version 2 — Cloud AI with Gemini
 **Folder:** `/gemini-ai-version`
@@ -52,6 +67,7 @@ The system offers **two independent AI implementations** to solve the same probl
 
 ---
 
+<<<<<<< HEAD
 ### 🧩 Demonstrated Skills
 * Deep Learning & Computer Vision.
 * Full Stack Development & AI API Integration.
@@ -69,6 +85,9 @@ The system offers **two independent AI implementations** to solve the same probl
 Run Local Version:
 
 Bash
+=======
+
+>>>>>>> b5a58dac1e7dd032579a6b07b7f22982b81c3bbd
 
 cd local-ml-version
 pip install -r requirements.txt
