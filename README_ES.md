@@ -9,15 +9,18 @@ El sistema ofrece **dos implementaciones independientes** de IA para resolver el
 ---
 
 ### 🎥 Demo en Acción
-> **[ INSERTA AQUÍ EL LINK A TU VIDEO O GIF ]**
-> *Demostración del diagnóstico con el modelo local y la integración con Gemini.*
+
+[![Mira la demo del Detector de Plantas](https://img.youtube.com/vi/C8H5XjXPsZc/0.jpg)](https://youtu.be/C8H5XjXPsZc)
+
+*Haz clic en la imagen de arriba para ver la demostración completa: Carga de imágenes, procesamiento de IA y diagnóstico en tiempo real.*
 
 ---
 
-### 📸 Screenshots
-| Interfaz del Sistema | Diagnóstico de IA |
+### 📸 Screenshots (Capturas de Pantalla)
+
+| Interfaz del Sistema (Local) | Análisis con IA (Gemini) |
 | :---: | :---: |
-| ![Preview 1](./screenshots/local_ui.png) | ![Preview 2](./screenshots/cloud_ui.png) |
+| ![Local](./screenshots/local_ui.png) | ![Cloud](./screenshots/cloud_ui.png) |
 
 ---
 
@@ -26,47 +29,31 @@ El sistema ofrece **dos implementaciones independientes** de IA para resolver el
 
 * **Tecnologías:** Python, TensorFlow / Keras, NumPy, PIL, Streamlit.
 * **Características:**
-  - Entrenamiento de una Red Neuronal Convolucional (CNN) desde cero.
+  - Entrenamiento de una Red Neuronal Convolucional (CNN) para clasificación.
   - Preprocesamiento y normalización de imágenes.
   - Entrenamiento por épocas y evaluación de rendimiento.
   - Visualización del diagnóstico y nivel de confianza.
 
-⚠️ **Archivo del Modelo:** El archivo `.h5` no se incluye por límites de tamaño en GitHub.
-- **Descarga el modelo aquí:** [Google Drive Link](https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link)
-- **Ubicación:** Después de descargar, guárdalo en `local-ml-version/model_plantvillage.h5`.
+⚠️ **Archivo del Modelo:** El archivo entrenado no se incluye en este repositorio por límites de tamaño de GitHub.
+- **Descarga el modelo aquí:** [Enlace a Google Drive](https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link)
+- **Ubicación:** Después de descargarlo, ubícalo en: `local-ml-version/model_plantvillage.h5`.
 
 ---
 
 ### ☁️ Versión 2 — IA en la Nube con Gemini
 **Carpeta:** `/gemini-ai-version`
 
-* **Tecnologías:** Python, Streamlit, API de Google Gemini, dotenv.
+* **Tecnologías:** Python, Streamlit, API de Google Gemini (1.5 Flash), dotenv.
 * **Características:**
-  - Integración de Gemini 2.5 Flash para análisis avanzado.
+  - Integración de **Gemini 1.5 Flash** para análisis avanzado de imágenes.
+  - Manejo seguro de variables de entorno para credenciales de API.
   - Explicaciones del diagnóstico detalladas generadas por IA.
-  - Manejo seguro de credenciales mediante variables de entorno.
   - Arquitectura de inferencia alternativa frente al modelo local.
 
-<<<<<<< HEAD
 ---
-=======
-🗂️ Archivo del Modelo 
-
-El archivo del modelo entrenado no se incluye en este repositorio por límites de tamaño de GitHub.
-
-Puedes descargar el modelo aquí:  
-https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link
-
-Después de descargarlo, ubícalo en:
-
-local-ml-version/model_plantvillage.h5
-
-☁️ Versión 2 — IA en la Nube con Gemini  
-Tecnologías
->>>>>>> b5a58dac1e7dd032579a6b07b7f22982b81c3bbd
 
 ### 🧩 Habilidades Demostradas
-* Deep Learning & Visión por Computador.
+* Deep Learning y Visión por Computador.
 * Desarrollo Full Stack e Integración de APIs de IA.
 * Arquitectura de Software y Procesamiento de Datos.
 * Diseño de Aplicaciones Seguras y Soluciones AgriTech.
@@ -75,8 +62,7 @@ Tecnologías
 
 ### 🚀 Cómo Ejecutar
 
-<<<<<<< HEAD
-1. **Clonar repositorio:**
+1. **Clonar el repositorio:**
    ```bash
    git clone [https://github.com/smurhenao/plant-disease-detector.git](https://github.com/smurhenao/plant-disease-detector.git)
    cd plant-disease-detector
@@ -90,49 +76,13 @@ streamlit run app.py
 Ejecutar Versión Gemini:
 
 Bash
-=======
-
-
-
-📂 Carpeta:
-
-/gemini-ai-version
-
-🧩 Habilidades Demostradas
-
-Deep Learning  
-Visión por Computador  
-Desarrollo Full Stack  
-Integración de APIs de Inteligencia Artificial  
-Arquitectura de Software  
-Procesamiento de Datos  
-Diseño de Aplicaciones Seguras  
-
-🚀 Cómo Ejecutar
-
-Clonar repositorio  
-git clone https://github.com/smurhenao/plant-disease-detector.git  
-cd plant-disease-detector  
-
-Ejecutar versión local  
-cd local-ml-version  
-pip install -r requirements.txt  
-streamlit run app.py  
-
-Ejecutar versión Gemini  
-cd gemini-ai-version  
-pip install -r requirements.txt  
-streamlit run app.py  
-
-Crea un archivo .env a partir de .env.example y agrega tu clave de API de Gemini.
->>>>>>> b5a58dac1e7dd032579a6b07b7f22982b81c3bbd
 
 cd gemini-ai-version
 pip install -r requirements.txt
-# Crea un archivo .env a partir de .env.example y agrega tu API KEY
+# Crea un archivo .env a partir de .env.example y agrega tu clave de API de Gemini.
 streamlit run app.py
 🌍 Aplicaciones
-Agricultura de precisión, diagnóstico de cultivos, investigación académica y soluciones AgriTech.
+Agricultura de precisión, diagnóstico de enfermedades en cultivos, investigación académica y soluciones AgriTech.
 
 🧑‍💻 Autor
 Sebastian Murillo - Ingeniero de Software | Desarrollador Full Stack | IA & Datos
