@@ -46,7 +46,7 @@ The system offers **two independent AI implementations** to solve the same probl
 
 * **Tech Stack:** Python, Streamlit, Google Gemini API, dotenv.
 * **Features:**
-  - Gemini 1.5 Flash integration for advanced image analysis.
+  - Gemini 2.5 Flash integration for advanced image analysis.
   - Secure environment variable management for API credentials.
   - AI-generated diagnostic explanations.
   - Alternative inference architecture compared to the local model.

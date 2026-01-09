@@ -45,7 +45,7 @@ El sistema ofrece **dos implementaciones independientes** de IA para resolver el
 
 * **Tecnologías:** Python, Streamlit, API de Google Gemini (1.5 Flash), dotenv.
 * **Características:**
-  - Integración de **Gemini 1.5 Flash** para análisis avanzado de imágenes.
+  - Integración de **Gemini 2.5 Flash** para análisis avanzado de imágenes.
   - Manejo seguro de variables de entorno para credenciales de API.
   - Explicaciones del diagnóstico detalladas generadas por IA.
   - Arquitectura de inferencia alternativa frente al modelo local.
