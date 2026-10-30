@@ -1,88 +1,66 @@
 🇪🇸 Español | [🇺🇸 English](README.md)
-# 🌱 Detector de Enfermedades en Plantas — Plataforma de IA y Full Stack
 
-### 📌 Descripción General
-Este proyecto es una plataforma web completa para la detección automática de enfermedades en plantas usando visión por computador e inteligencia artificial. Fue diseñado e implementado como una solución de ingeniería completa, desde el entrenamiento del modelo hasta el despliegue y la interfaz de usuario.
+# 🌱 PhytoScan v2.0 — Detector Inteligente de Enfermedades en Plantas (Cloud API & Real-Time SSE)
 
-El sistema ofrece **dos implementaciones independientes** de IA para resolver el mismo problema, demostrando adaptabilidad y sólidas habilidades en arquitectura de software.
+Plataforma web moderna, minimalista y segura para la **detección real de plantas** y el **diagnóstico fitopatológico en tiempo real**, construida con **Next.js (App Router), TypeScript y Tailwind CSS**, lista para desplegar en **Vercel**.
 
 ---
 
-### 🎥 Demo en Acción
+## ✨ Características Principales
 
-[![Mira la demo del Detector de Plantas](https://img.youtube.com/vi/C8H5XjXPsZc/0.jpg)](https://youtu.be/C8H5XjXPsZc)
-
-*Haz clic en la imagen de arriba para ver la demostración completa: Carga de imágenes, procesamiento de IA y diagnóstico en tiempo real.*
-
----
-
-### 📸 Screenshots (Capturas de Pantalla)
-
-| Interfaz del Sistema (Local) | Análisis con IA (Gemini) |
-| :---: | :---: |
-| ![Local](./screenshots/local_ui.png) | ![Cloud](./screenshots/cloud_ui.png) |
-
----
-
-### 🧠 Versión 1 — Modelo de Aprendizaje Automático Local
-**Carpeta:** `/local-ml-version`
-
-* **Tecnologías:** Python, TensorFlow / Keras, NumPy, PIL, Streamlit.
-* **Características:**
-  - Entrenamiento de una Red Neuronal Convolucional (CNN) para clasificación.
-  - Preprocesamiento y normalización de imágenes.
-  - Entrenamiento por épocas y evaluación de rendimiento.
-  - Visualización del diagnóstico y nivel de confianza.
-
-⚠️ **Archivo del Modelo:** El archivo entrenado no se incluye en este repositorio por límites de tamaño de GitHub.
-- **Descarga el modelo aquí:** [Enlace a Google Drive](https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link)
-- **Ubicación:** Después de descargarlo, ubícalo en: `local-ml-version/model_plantvillage.h5`.
+1. **Detección Botánica Real (Anti-Falsos Positivos)**:
+   - Impulsada por **Google Gemini Vision API (`models/gemini-3.8-flash`)** con alta disponibilidad y conmutación automática ante picos de demanda.
+   - Verifica primero si la imagen contiene genuinamente una planta, hoja, tallo, flor o fruto (`isPlant: boolean`), rechazando objetos no botánicos con explicación detallada.
+2. **Streaming en Tiempo Real (Server-Sent Events — SSE)**:
+   - Endpoint `/api/analyze` basado en `ReadableStream` (`text/event-stream`) 100% compatible con **Vercel Serverless**, transmitiendo en vivo cada etapa del análisis (`security_check` → `ai_inference` → `validation` → `complete`).
+3. **Seguridad Multicapa (Defense-in-Depth)**:
+   - **Verificación Criptográfica de Magic Bytes + Escaneo Anti-Políglota**: Valida las cabeceras hexadecimales reales (`FF D8 FF` JPEG, `89 50 4E 47` PNG, `RIFF..WEBP`) y bloquea archivos con scripts embebidos.
+   - **Limpieza de EXIF / GPS en el Navegador**: Re-codifica la imagen en `<canvas>` antes de enviarla, eliminando coordenadas GPS privadas y reduciendo el peso un ~90% para máxima velocidad.
+   - **Protección Anti-CSRF y Rate Limiting por IP**: Bloqueo de peticiones *Cross-Site* (`Sec-Fetch-Site`) y limitador de tasa *Sliding Window* en memoria LRU.
+   - **Ocultación de API Key y Validación Estricta con Zod**: La clave viaja en la cabecera privada `x-goog-api-key` y la salida del modelo es validada con esquemas estrictos de **Zod**.
+   - **Cabeceras HTTP Seguras**: `Content-Security-Policy (CSP)`, `Strict-Transport-Security (HSTS)`, `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff` y `Permissions-Policy`.
 
 ---
 
-### ☁️ Versión 2 — IA en la Nube con Gemini
-**Carpeta:** `/gemini-ai-version`
+## 🏗️ Estructura del Software
 
-* **Tecnologías:** Python, Streamlit, API de Google Gemini (1.5 Flash), dotenv.
-* **Características:**
-  - Integración de **Gemini 2.5 Flash** para análisis avanzado de imágenes.
-  - Manejo seguro de variables de entorno para credenciales de API.
-  - Explicaciones del diagnóstico detalladas generadas por IA.
-  - Arquitectura de inferencia alternativa frente al modelo local.
+```text
+plant-disease-detector/
+├── src/
+│   ├── app/
+│   │   ├── api/analyze/route.ts       # Endpoint SSE en tiempo real con seguridad multicapa
+│   │   ├── api/health/route.ts        # Estado del motor y auditoría de seguridad
+│   │   ├── layout.tsx                 # Layout principal
+│   │   └── page.tsx                   # Interfaz minimalista (Escáner + Cámara en vivo + Instrucciones)
+│   ├── components/
+│   │   ├── DiagnosisReport.tsx        # Informe clínico fitopatológico y rechazo No-Planta
+│   │   └── SecurityArchitectureModal.tsx # Gestión segura de API Key y arquitectura de seguridad
+│   ├── domain/
+│   │   └── schemas.ts                 # Contratos estrictos con Zod
+│   ├── lib/
+│   │   └── image-processor.ts         # Compresión JPEG/WebP y eliminación de metadatos EXIF/GPS
+│   ├── security/
+│   │   ├── file-validator.ts          # Verificador binario de Magic Bytes, anti-políglota y sanitizador de claves
+│   │   └── rate-limiter.ts            # Rate limiter Sliding Window en memoria LRU
+│   └── services/
+│       └── gemini-analyzer.ts         # Cliente Gemini 3.8 Flash con retry y alta disponibilidad
+├── tests/                             # Suite de pruebas automatizadas de seguridad (Vitest)
+└── vercel.json                        # Configuración lista para despliegue en Vercel
+```
 
 ---
 
-### 🧩 Habilidades Demostradas
-* Deep Learning y Visión por Computador.
-* Desarrollo Full Stack e Integración de APIs de IA.
-* Arquitectura de Software y Procesamiento de Datos.
-* Diseño de Aplicaciones Seguras y Soluciones AgriTech.
+## 🚀 Ejecución Local y Despliegue en Vercel
+
+```bash
+npm install
+cp .env.example .env.local # Configura tu GEMINI_API_KEY
+npm run dev
+```
+
+En **Vercel**, importa el repositorio y agrega la variable de entorno `GEMINI_API_KEY` en *Project Settings → Environment Variables*.
 
 ---
 
-### 🚀 Cómo Ejecutar
-
-1. **Clonar el repositorio:**
-   ```bash
-   git clone [https://github.com/smurhenao/plant-disease-detector.git](https://github.com/smurhenao/plant-disease-detector.git)
-   cd plant-disease-detector
-Ejecutar Versión Local:
-
-Bash
-
-cd local-ml-version
-pip install -r requirements.txt
-streamlit run app.py
-Ejecutar Versión Gemini:
-
-Bash
-
-cd gemini-ai-version
-pip install -r requirements.txt
-# Crea un archivo .env a partir de .env.example y agrega tu clave de API de Gemini.
-streamlit run app.py
-🌍 Aplicaciones
-Agricultura de precisión, diagnóstico de enfermedades en cultivos, investigación académica y soluciones AgriTech.
-
-🧑‍💻 Autor
-Sebastian Murillo - Ingeniero de Software | Desarrollador Full Stack | IA & Datos
+## 🧑‍💻 Autor
+**Sebastian Murillo** — Ingeniero de Software | Desarrollador Full Stack | IA & Datos

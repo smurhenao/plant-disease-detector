@@ -1,0 +1,35 @@
+{
+  "name": "plant-disease-detector",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Plataforma fitopatológica moderna y segura con IA multimodal, streaming SSE en tiempo real y catálogo PlantVillage, lista para Vercel.",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.56.0",
+    "next": "^15.1.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@types/react": "~19.0.10",
+    "@types/react-dom": "~19.0.4",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.8.3",
+    "vitest": "^3.0.5"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

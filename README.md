@@ -1,89 +1,27 @@
-🇺🇸 English | [🇪🇸 Español](README_ES.md)
+[🇪🇸 Español](README_ES.md) | 🇺🇸 English
 
-# 🌱 Plant Disease Detector — AI & Full Stack Platform
+# 🌱 PhytoScan v2.0 — Real-Time Plant Disease Detection Platform (Cloud API & SSE)
 
-### 📌 Overview
-This project is a comprehensive web platform for the automatic detection of plant diseases using computer vision and artificial intelligence. It was designed and implemented as a complete engineering solution, from model training to deployment and user interface.
-
-The system offers **two independent AI implementations** to solve the same problem, demonstrating adaptability and solid software architecture skills.
+Modern, minimalist, and security-hardened web platform for **true botanical detection** and **real-time foliar disease diagnosis**, built with **Next.js (App Router), TypeScript, and Tailwind CSS**, ready for **Vercel**.
 
 ---
 
-### 🎥 Demo in Action
+## ✨ Key Highlights
 
-[![Watch Plant Detector Demo](https://img.youtube.com/vi/C8H5XjXPsZc/0.jpg)](https://youtu.be/C8H5XjXPsZc)
-
-*Click the image above to watch the full demonstration: Image upload, AI processing, and real-time diagnosis.*
-
----
-
-### 📸 Screenshots
-
-| Local Model Interface | Cloud AI (Gemini) Analysis |
-| :---: | :---: |
-| ![Local](./screenshots/local_ui.png) | ![Cloud](./screenshots/cloud_ui.png) |
+- **True Botanical Validation (`models/gemini-3.8-flash`)**: Powered by the Google Gemini Vision API with automatic retry and high-availability failover. Verifies `isPlant: boolean` first and rejects non-botanical objects cleanly.
+- **Real-Time SSE Streaming (`/api/analyze`)**: Built on native HTTP `ReadableStream` (`text/event-stream`) for real-time progress updates, 100% compatible with Vercel Serverless Functions.
+- **Defense-in-Depth Security**:
+  - **Binary Magic Bytes & Anti-Polyglot Inspection** (`FF D8 FF` JPEG, `89 50 4E 47` PNG, `RIFF..WEBP`).
+  - **Client-Side EXIF/GPS Stripping & Compression** via HTML5 Canvas (~90% payload reduction).
+  - **CSRF Protection & Sliding-Window IP Rate Limiting** with LRU memory protection.
+  - **Visual Prompt Injection Hardening** + strict **Zod** validation and HTTP CSP headers.
 
 ---
 
-### 🧠 Version 1 — Local Machine Learning Model
-**Folder:** `/local-ml-version`
+## 🚀 Quick Start
 
-* **Tech Stack:** Python, TensorFlow / Keras, NumPy, PIL, Streamlit.
-* **Features:**
-  - Convolutional Neural Network (CNN) training for plant disease classification.
-  - Image preprocessing and normalization.
-  - Training epochs and performance evaluation.
-  - Diagnostic visualization and confidence levels.
-
-⚠️ **Model File:** The trained model file is not included in this repo due to GitHub size limits.
-- **Download the model here:** [Google Drive Link](https://drive.google.com/drive/folders/1D8QPMVjWAiz_eDDrd5kVoVfdmNFQlbxw?usp=drive_link)
-- **Placement:** After downloading, place it in: `local-ml-version/model_plantvillage.h5`.
-
----
-
-### ☁️ Version 2 — Cloud AI with Gemini
-**Folder:** `/gemini-ai-version`
-
-* **Tech Stack:** Python, Streamlit, Google Gemini API, dotenv.
-* **Features:**
-  - Gemini 2.5 Flash integration for advanced image analysis.
-  - Secure environment variable management for API credentials.
-  - AI-generated diagnostic explanations.
-  - Alternative inference architecture compared to the local model.
-
----
-
-### 🧩 Demonstrated Skills
-* Deep Learning & Computer Vision.
-* Full Stack Development & AI API Integration.
-* Software Architecture & Data Processing.
-* Secure Application Design & AgriTech Solutions.
-
----
-
-### 🚀 How to Run
-
-1. **Clone repository:**
-   ```bash
-   git clone [https://github.com/smurhenao/plant-disease-detector.git](https://github.com/smurhenao/plant-disease-detector.git)
-   cd plant-disease-detector
-Run Local Version:
-
-Bash
-
-cd local-ml-version
-pip install -r requirements.txt
-streamlit run app.py
-Run Gemini Version:
-
-Bash
-
-cd gemini-ai-version
-pip install -r requirements.txt
-# Create a .env file from .env.example and add your Gemini API Key
-streamlit run app.py
-🌍 Applications
-Precision agriculture, crop disease diagnosis, academic research, and AgriTech solutions.
-
-🧑‍💻 Author
-Sebastian Murillo - Software Engineer | Full Stack Developer | AI & Data
+```bash
+npm install
+cp .env.example .env.local # Add GEMINI_API_KEY
+npm run dev
+```
