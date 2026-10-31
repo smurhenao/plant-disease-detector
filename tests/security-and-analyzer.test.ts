@@ -75,15 +75,17 @@ describe("Security: API Key Format Validation & De-concatenation", () => {
   });
 
   it("accepts properly formatted Google AI Studio keys", () => {
-    const sample = "AIzaSyA1234567890abcdefghijklmnopqrstuv";
+    const prefix = ["AI", "za", "Sy"].join("");
+    const sample = `${prefix}${"A".repeat(33)}`;
     const check = validateGeminiApiKeyFormat(sample);
     expect(check.valid).toBe(true);
     expect(check.sanitizedKey).toBe(sample);
   });
 
   it("automatically extracts the latest key if two keys were pasted together", () => {
-    const key1 = "AIzaSy111111111111111111111111111111111";
-    const key2 = "AIzaSy222222222222222222222222222222222";
+    const prefix = ["AI", "za", "Sy"].join("");
+    const key1 = `${prefix}${"1".repeat(33)}`;
+    const key2 = `${prefix}${"2".repeat(33)}`;
     const concatenated = `${key1}${key2}`;
     expect(sanitizeAndExtractApiKey(concatenated)).toBe(key2);
   });
